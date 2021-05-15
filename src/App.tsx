@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import NoteBook from './components/Notebook'
+import SearchNotes from './components/SearchNotes'
 import './App.css';
 
 function App() {
+
+  const [notes, setNotes] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className='App-header'>Lab Notes</header>
+      <NoteBook addNotesCallback={(notes) => setNotes(notes)} />
+      <SearchNotes notes={notes} />
     </div>
   );
 }
