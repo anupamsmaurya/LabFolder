@@ -45,10 +45,12 @@ export const searchNotes = (searchTerm: string): SearchResultType => {
         if(Math.abs(word.length - searchTerm.length) > 1) {
             return
         }
-        const distance = levenshtein(searchTerm, word)
-        if(distance === 0) {
+        if(searchTerm === word) {
             result.frequency ++
-        } else if(distance === 1) {
+            return
+        }
+        const distance = levenshtein(searchTerm, word)
+        if(distance === 1) {
             result.similarWords.push(word)
         }
     })

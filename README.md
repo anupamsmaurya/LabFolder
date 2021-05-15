@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can add lab notes in textarea and search keyword withing the stored notes.
+You can add lab notes in textarea and search keyword within the stored notes.
+Search is based on Levenshtein distabce algortihm. Similar words are those for which distance is 1.
+
 Using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to store all data in browser memory.
 
 Use `yarn start` to run the app locally.
